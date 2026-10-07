@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAVITEC · Soluciones Náuticas · Próximamente</title>
+<meta name="description" content="NAVITEC Soluciones Náuticas. Nuestro nuevo sitio está por zarpar.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E2A40" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="NAVITEC · Soluciones Náuticas">
+<meta property="og:description" content="Nuestro nuevo sitio está por zarpar.">
+<meta property="og:url" content="https://navitec.cr/">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400&family=Lato:ital,wght@1,700&display=swap">
+<style>
+:root{
+  --red:#BE1622;
+  --bg:#F4F1EA; --text:#0E2A40; --muted:#44585F; --orb:#BE1622;
+  --wave-back:#8CA1A8; --wave-mid:#004F6E; --wave-front:#0E2A40;
+  --sail:#0E2A40; --hull:#0E2A40; --sail-text:#F4F1EA; --footer:#C9D3D6;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0E2A40; --text:#F4F1EA; --muted:#A9BAC0; --orb:#F4F1EA;
+    --wave-back:#004F6E; --wave-mid:#0A3550; --wave-front:#061A28;
+    --sail:#F4F1EA; --hull:#F4F1EA; --sail-text:#0E2A40; --footer:#A9BAC0;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg)}
+body{
+  min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-x:hidden;
+  color:var(--text);font-family:'IBM Plex Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+main{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:32px;padding:64px 24px 32px;text-align:center}
+.logo{width:100%;max-width:480px;height:auto;display:block}
+.copy{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:640px}
+.eyebrow{display:flex;align-items:center;gap:12px;margin:0;font:500 12px 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--muted)}
+.eyebrow::before,.eyebrow::after{content:"";display:block;width:24px;height:2px;background:var(--red)}
+h1{margin:0;font:italic 700 clamp(2.25rem,5vw,3.5rem)/1.1 'Lato','Helvetica Neue',sans-serif;letter-spacing:-.01em}
+.lead{margin:0;font-size:18px;line-height:1.5;color:var(--muted)}
+
+.sea{position:relative;flex:0 0 auto;height:300px;overflow:hidden}
+.orb{position:absolute;top:8px;right:14%;width:56px;height:56px;border-radius:50%;background:var(--orb);opacity:.9}
+.layer{position:absolute;left:0;right:0;bottom:0;overflow:hidden}
+.layer svg{display:block;width:200%;height:100%;animation:wave linear infinite}
+.back{height:190px}.back svg{animation-duration:38s}.back path{fill:var(--wave-back)}
+.mid{height:140px}.mid svg{animation-duration:26s;animation-direction:reverse}.mid path{fill:var(--wave-mid)}
+.front{height:84px}.front svg{animation-duration:18s}.front path{fill:var(--wave-front)}
+
+.boat{position:absolute;left:0;animation:sail linear infinite}
+.boat .bob{animation:bob ease-in-out infinite;transform-origin:50% 88%}
+.boat svg{display:block}
+.boat text{font:500 8px 'IBM Plex Mono',monospace;fill:var(--sail-text)}
+.far{opacity:.9}
+.b1{bottom:118px;animation-duration:70s;animation-delay:-12s}.b1 .bob{animation-duration:3.6s}
+.b2{bottom:124px;animation-duration:78s;animation-delay:-50s}.b2 .bob{animation-duration:4.1s}
+.b3{bottom:52px;animation-duration:44s;animation-delay:-16s}.b3 .bob{animation-duration:3s}
+.b4{bottom:58px;animation-duration:52s;animation-delay:-40s}.b4 .bob{animation-duration:3.4s}
+
+.buoy{position:absolute;animation:buoy 2.8s ease-in-out infinite;transform-origin:50% 100%}
+.buoy svg{display:block}
+
+footer{flex:0 0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;
+  padding:0 24px 20px;margin-top:-1px;background:var(--wave-front);color:var(--footer);font-size:12px;letter-spacing:.02em}
+footer a{color:inherit;text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@keyframes wave{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sail{from{transform:translateX(-180px)}to{transform:translateX(calc(100vw + 40px))}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2.5deg)}50%{transform:translateY(4px) rotate(2.5deg)}}
+@keyframes buoy{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(5px) rotate(7deg)}}
+@media (prefers-reduced-motion:reduce){
+  .layer svg,.boat,.boat .bob,.buoy{animation-play-state:paused}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="boat-jib" viewBox="0 0 120 104">
+      <path style="fill:var(--sail)" d="M54 6Q44 46 14 80H54Z"/>
+      <path style="fill:var(--sail)" opacity=".8" d="M59 12V78H96Z"/>
+      <rect x="55" y="3" width="2.5" height="82" style="fill:var(--hull)"/>
+      <path style="fill:var(--hull)" d="M4 84H116L103 98H17Z"/>
+      <path fill="#BE1622" d="M8 88H112L110 91H10Z"/>
+    </symbol>
+    <symbol id="boat-spin" viewBox="0 0 120 104">
+      <path style="fill:var(--sail)" d="M54 6Q44 46 14 80H54Z"/>
+      <path fill="#BE1622" d="M60 10Q120 30 104 78H62Z"/>
+      <rect x="55" y="3" width="2.5" height="82" style="fill:var(--hull)"/>
+      <path style="fill:var(--hull)" d="M4 84H116L103 98H17Z"/>
+      <path fill="#BE1622" d="M8 88H112L110 91H10Z"/>
+    </symbol>
+    <symbol id="buoy" viewBox="0 0 18 30">
+      <path fill="#BE1622" d="M9 0 18 26H0Z"/>
+      <rect x="3" y="14" width="12" height="4" fill="#F4F1EA"/>
+      <rect x="0" y="26" width="18" height="4" style="fill:var(--hull)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main>
+  <picture>
+    <source srcset="assets/logo-dark.png" media="(prefers-color-scheme: dark)">
+    <img class="logo" src="assets/logo-light.png" width="1200" height="302" alt="NAVITEC · Soluciones Náuticas">
+  </picture>
+  <div class="copy">
+    <p class="eyebrow">PRÓXIMAMENTE · NAVITEC.CR</p>
+    <h1>Estamos alistando las velas.</h1>
+    <p class="lead">Muy pronto, el nuevo sitio de NAVITEC Soluciones Náuticas.</p>
+  </div>
+</main>
+
+<div class="sea" aria-hidden="true">
+  <div class="orb"></div>
+
+  <div class="layer back"><svg viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 20C180 0 540 40 720 20S1260 0 1440 20 1980 40 2160 20 2700 0 2880 20V100H0Z"/></svg></div>
+
+  <div class="boat far b1"><div class="bob"><svg width="66" height="57" viewBox="0 0 120 104"><use href="#boat-jib"/><text x="30" y="64">CR 12</text></svg></div></div>
+  <div class="boat far b2"><div class="bob"><svg width="72" height="62" viewBox="0 0 120 104"><use href="#boat-spin"/><text x="30" y="64">CR 3</text></svg></div></div>
+
+  <div class="layer mid"><svg viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 16C180 0 540 32 720 16S1260 0 1440 16 1980 32 2160 16 2700 0 2880 16V100H0Z"/></svg></div>
+
+  <div class="buoy" style="left:31%;bottom:74px"><svg width="18" height="30"><use href="#buoy"/></svg></div>
+  <div class="buoy" style="left:74%;bottom:80px;animation-delay:-1.2s"><svg width="18" height="30"><use href="#buoy"/></svg></div>
+
+  <div class="boat b3"><div class="bob"><svg width="120" height="104" viewBox="0 0 120 104"><use href="#boat-spin"/><text x="30" y="64">CR 7</text></svg></div></div>
+  <div class="boat b4"><div class="bob"><svg width="106" height="92" viewBox="0 0 120 104"><use href="#boat-jib"/><text x="30" y="64">CR 21</text></svg></div></div>
+
+  <div class="layer front"><svg viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 14C180 0 540 28 720 14S1260 0 1440 14 1980 28 2160 14 2700 0 2880 14V100H0Z"/></svg></div>
+</div>
+
+<footer>
+  <span>© 2026 NAVITEC · Soluciones Náuticas</span>
+  <a href="https://navitec.cr">navitec.cr</a>
+</footer>
+
+</body>
+</html>
